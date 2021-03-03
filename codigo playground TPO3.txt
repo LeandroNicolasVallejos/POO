@@ -1,0 +1,21 @@
+agencia := Agencia crearAgencia: 'agencia1'.
+auto := Auto crearAuto: 'toyota' modelo: 'hilux' matricula: 'plp789' tarifa: 20.
+camion := Camion crearCamion: 'iveco' modelo: 'mod' matricula: 'hola231' ligero_Semi: 'ligero' tipoCamion: 'cisterna'.
+camion2 := Camion crearCamion: 'scania' modelo: 'modelo' matricula: 'hola123123'  ligero_Semi: 'semipesado' tipoCamion: 'isotermico'.
+camion2 kilometraje: 80000.
+clien := Cliente crearCliente: 'Vallejos Leandro' conDNI: 40612658.
+date1:= Date newDay: 2 month: 'June' year: 2019.
+alqCam := Alq_Camiones crearAlquilerCamiones: clien deFecha: date1  deCamion: camion.
+alqCam2 := Alq_Camiones crearAlquilerCamiones: clien deFecha: date1 deCamion: camion2.
+alqTur := Alq_Turismo crearAlquilerTurismo: clien deFecha: date1 deAuto: auto.
+"falta crear un alquiler de turismo"
+agencia agregarAlquiler: alqCam.
+agencia agregarAlquiler: alqTur.
+agencia agregarAlquiler: alqCam2.
+agencia agregarPrecioCamion: #('isotermico' 250).
+agencia agregarPrecioCamion: #('cisterna' 100).
+agencia agregarPrecioAdicional: #('silla' 1000).
+agencia agregarPrecioAdicional: #('cadenas de nieve' 1500).
+alqTur agregarAdicional: 'silla'.
+alqCam2 devolverVehiculo: agencia kmRecorridos: 500.
+alqTur devolverVehiculo: agencia kmRecorridos: 50000.
